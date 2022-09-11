@@ -1,0 +1,79 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='object_can_03'>
+    <static>false</static>
+    <link name='object_can'>
+      
+      <collision name='body_collision'>
+        <geometry>
+          <cylinder>
+            <radius>0.3</radius>
+            <length>1.0</length>
+          </cylinder>
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass>1</mass>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+      </inertial>
+
+      <visual name='body'>
+        <pose frame=''>0 0 -0.15 0 -0 0</pose> <!-- 0.35 - 0.5 -->
+        <geometry>
+          <cylinder>
+            <radius>0.3</radius>
+            <length>0.7</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+
+      <visual name='eye'>
+        <pose frame=''>0 0 0.25 0 -0 0</pose> <!-- 0.75 - 0.5 -->
+        <geometry>
+          <cylinder>
+            <radius>0.25</radius>
+            <length>0.1</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+
+      <visual name='top'>
+        <pose frame=''>0 0 0.4 0 -0 0</pose> <!-- 0.9 - 0.5 -->
+        <geometry>
+          <cylinder>
+            <radius>0.3</radius>
+            <length>0.2</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <lighting>1</lighting>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Blue</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+    </link>
+  </model>
+</sdf>

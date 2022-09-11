@@ -1,0 +1,40 @@
+<!-- 模擬環境訓練/驗證主要執行檔 -->
+
+<launch>
+  <!-- Arguments -->
+  <arg name="scene"        default="space_4_525"/>  <!-- 開啟地圖/場景模型檔案 -->
+  <arg name="open_rviz"    default="true"/>         <!-- 是否開啟 RViz -->
+  <arg name="open_gazebo"  default="false"/>        <!-- 開啟 Gazebo GUI -->
+  <arg name="robot_model"  default="youbot"/>       <!-- 機器人模型名稱 -->
+  <arg name="init_pos_x"   default="0.0"/>          <!-- 機器人模型初始 x -->
+  <arg name="init_pos_y"   default="0.0"/>          <!-- 機器人模型初始 y -->
+  <arg name="init_pos_z"   default="0.0"/>          <!-- 機器人模型初始 z -->
+  <arg name="init_pos_yaw" default="0.0"/>          <!-- 機器人模型初始 yaw -->
+
+  <!-- 發布地圖資訊 -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(find rrt_rl_nav)/maps/$(arg scene)/map.yaml"/>
+
+  <!-- AMCL 定位資訊 -->
+  <include file="$(find rrt_rl_nav)/launch/amcl.launch"/>
+
+  <!-- 開啟 Gazebo 世界模型 -->
+  <include file="$(find rrt_rl_nav)/launch/world.launch">
+    <arg name="world_name"  value="$(arg scene)"/>
+    <arg name="open_gazebo" value="$(arg open_gazebo)"/>
+  </include>
+
+  <!-- 投放機器人模型 -->
+  <include file="$(find rrt_rl_nav)/launch/youbot_remote.launch">
+    <arg name="init_pos_x"   value="$(arg init_pos_x)"/>
+    <arg name="init_pos_y"   value="$(arg init_pos_y)"/>
+    <arg name="init_pos_z"   value="$(arg init_pos_z)"/>
+    <arg name="init_pos_yaw" value="$(arg init_pos_yaw)"/>
+  </include>
+
+  <!-- 開啟 RViz 檢視 -->
+  <group if="$(arg open_rviz)"> 
+    <node pkg="rviz" type="rviz" name="rviz" required="true"
+          args="-d $(find rrt_rl_nav)/config/rrt_rl_navigation_rviz.rviz"/>
+  </group>
+
+</launch>

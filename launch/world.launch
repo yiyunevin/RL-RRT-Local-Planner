@@ -1,0 +1,21 @@
+<!-- 開啟 Gazebo 模擬世界 -->
+
+<launch>
+
+  <arg name="world_name" />
+  <arg name="open_gazebo" />
+  <arg name="use_sim_time" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg open_gazebo)"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="verbose" value="false" />
+    <!--<arg name="world_name" value="$(find rrt_rl_nav)/worlds/$(arg world_name)/model.sdf"/>-->
+  </include>
+
+</launch>

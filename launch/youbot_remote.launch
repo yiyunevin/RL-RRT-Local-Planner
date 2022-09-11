@@ -1,0 +1,33 @@
+<!-- 投放機器人模型 -->
+
+<launch>
+
+  <arg name="init_pos_x" default="1.1"/>
+  <arg name="init_pos_y" default="2.2"/>
+  <arg name="init_pos_z" default="0.0"/>
+  <arg name="init_pos_yaw" default="3.1"/>
+
+  <!-- 開啟機器人描述檔之模型 -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find youbot_description)/robots/youbot_sick.urdf.xacro" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_robot" respawn="false" output="screen"
+    args="-param robot_description
+          -urdf
+          -x $(arg init_pos_x)
+          -y $(arg init_pos_y)
+          -z $(arg init_pos_z)
+          -Y $(arg init_pos_yaw)
+          -model youbot">
+  </node>
+
+  <!-- 機器人控制相關 (youBot 官方提供) -->
+  <!-- launch joint state controller -->
+  <include file="$(find youbot_gazebo_control)/launch/joint_state_controller.launch" />
+
+  <!-- <include file="$(find youbot_gazebo_control)/launch/arm_controller.launch" /> -->
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="100.0" />
+  </node>
+
+</launch>
