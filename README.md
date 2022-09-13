@@ -1,7 +1,7 @@
 # Local-Planner
 
 + A ROS package of a SAC-based-autonomous-navigation method
-+ Use with repository [Global-Planner](https://github.com/yiyunevin/Global-Planner.git)
++ Use with repository [RL-RRT-Global-Planner](https://github.com/yiyunevin/Global-Planner.git)
 
 ## Environment
 
