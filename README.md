@@ -26,7 +26,7 @@
 ### Environment setting
 
 1. Build a ROS package named `rrt_rl_nav`
-2. Replace with the files of this repository
+2. Replace with the files in this repository
 3. `$ catkin_make`
 
 ### Run the test program
