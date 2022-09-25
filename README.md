@@ -3,6 +3,10 @@
 + A ROS package of a SAC-based-autonomous-navigation method
 + Use with repository [RL-RRT-Global-Planner](https://github.com/yiyunevin/Global-Planner.git)
 
+<p align=center>
+  <img src=https://user-images.githubusercontent.com/26008008/192148707-a85bce11-6d7d-4bd7-869e-0f40a58edb3f.gif>
+</p>
+
 ## Environment
 
 **System**
