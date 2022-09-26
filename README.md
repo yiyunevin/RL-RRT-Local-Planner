@@ -8,12 +8,6 @@
   <img src=https://user-images.githubusercontent.com/26008008/192171755-12d21f4b-1ec6-436a-afcd-621be4585798.png  width="65%">
 </p>
 
-+ Simulation Result on RViz
-
-<p align=center>
-  <img src=https://user-images.githubusercontent.com/26008008/192148707-a85bce11-6d7d-4bd7-869e-0f40a58edb3f.gif >
-</p>
-
 ## Environment
 
 **System**
@@ -66,3 +60,9 @@ $ python3 ~/rrt_rl_review_ws/src/rrt_rl_nav/script/main.py --real
 ```
 
 + specify start and goal with RViz 2D Nav Goal
+
+## Result
+
+| Simulation | Real |
+| :--: | :--: |
+| <p align=center><img src=https://user-images.githubusercontent.com/26008008/192148707-a85bce11-6d7d-4bd7-869e-0f40a58edb3f.gif ></p> |  |
