@@ -63,6 +63,8 @@ $ python3 ~/rrt_rl_review_ws/src/rrt_rl_nav/script/main.py --real
 
 ## Result
 
-| Simulation | Real |
-| :--: | :--: |
-| <p align=center><img src=https://user-images.githubusercontent.com/26008008/192148707-a85bce11-6d7d-4bd7-869e-0f40a58edb3f.gif ></p> |  |
+<p align=center>
+  <img src=https://user-images.githubusercontent.com/26008008/192148707-a85bce11-6d7d-4bd7-869e-0f40a58edb3f.gif >
+</p>
+
+
